@@ -14,7 +14,7 @@ gewicht = int(input('wat is uw lichaamsgewicht'))
 certificaat = input('heeft u een overleven met gevaarlijk personeel certificaat')
 ervaring = input('praktijkervaring met dieren-dressuur of ervaring met jongleren of praktijkervaring met acrobatiek')
 if ervaring == 'acrobatiek':
-    acrobatiek = int(input('hoe jaar ervaring hebt u met acrobatiek'))
+    acrobatiek = int(input('hoeveel jaar ervaring hebt u met acrobatiek'))
     acrobatiek > 3
 elif ervaring == 'jongleren':
     jongleren = int(input('hoeveel jaar ervaring hebt u met jongleren'))
@@ -23,7 +23,7 @@ elif ervaring == 'jongleren':
         dieren_dressuur = int(input('hoeveel jaar ervaring hebt u met dieren-dressuur'))
         dieren_dressuur > 4
 
-if (diploma == 'ja') and (rijbewijs == 'ja') and (hoed == 'ja') and (geslacht == 'man' and snor == 'ja' and snor_breedte > 10) or (geslacht == 'vrouw' and haarkleur == 'ja' and haarlengte > 20) and (lengte > 150 and lengte < 220) and (gewicht > 90 and gewicht < 120) and (certificaat == 'ja') and (ervaring and acrobatiek > 3 and jongleren > 5 and dieren_dressuur > 4):
+if diploma == 'ja' and rijbewijs == 'ja' and hoed == 'ja' and (geslacht == 'man' and snor == 'ja' and snor_breedte > 10) or (geslacht == 'vrouw' and haarkleur == 'ja' and haarlengte > 20) and lengte > 150 and lengte < 220 and gewicht > 90 and gewicht < 120 and certificaat == 'ja' and (ervaring and acrobatiek > 3 and jongleren > 5 and dieren_dressuur > 4):
     print('geschikt voor de baan')
 else:
     print("je bent niet geschikt")
