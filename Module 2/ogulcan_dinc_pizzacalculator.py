@@ -1,9 +1,25 @@
 small_pizza = 9.99
-aantal_small_pizzas = int(input('hoeveel small pizzas wilt u'))
+while True:
+    try:
+        aantal_small_pizzas = int(input('hoeveel small pizzas wilt u'))
+        break
+    except ValueError:
+        print('gebruik getallen')
 medium_pizza = 15.49
-aantal_medium_pizzas = int(input('hoeveel medium pizzas wilt u'))
+while True:
+    try:
+        aantal_medium_pizzas = int(input('hoeveel medium pizzas wilt u'))
+        break
+    except ValueError:
+        print('gebruik getallen')
 large_pizza = 17.99
-aantal_large_pizzas = int(input('hoeveel large pizzas wilt u'))
+while True:
+    try:
+        aantal_large_pizzas = int(input('hoeveel large pizzas wilt u'))
+        break
+    except ValueError:
+        print('gebruik getallen')
+
 name = input('wat jou naam')
 adres = input('wat is je adres')
 huisnummer = input('wat is jou huisnummer')
