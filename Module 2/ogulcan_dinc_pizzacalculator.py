@@ -5,6 +5,7 @@ while True:
         break
     except ValueError:
         print('gebruik getallen')
+        
 medium_pizza = 15.49
 while True:
     try:
@@ -12,6 +13,7 @@ while True:
         break
     except ValueError:
         print('gebruik getallen')
+
 large_pizza = 17.99
 while True:
     try:
