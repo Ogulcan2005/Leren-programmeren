@@ -16,5 +16,12 @@ totaal2 = (f'€{uitgraven + afvoergrond + voorrijkosten}')
 print(totaal2)
 #######################################
 # stap 4
-vierkante = 8 * 3
-print(vierkante)
+hoogte = int(input('wat is jou hoogte voor je zwembad'))
+breedte = int(input('wat is jou breedte voor je zwembad'))
+diepte = float(input('wat is jou diepte voor je zwembad'))
+hoeveel_grond = hoogte * breedte * diepte
+print(hoeveel_grond)
+###################################################
+#stap 5
+
+
