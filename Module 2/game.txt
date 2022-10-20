@@ -1,0 +1,21 @@
+                        else:
+                            print('jullie gaan voor deel want jullie kunnen nooit al dat goud dragen')
+                            print('zelfde gaat voor johns vriedin die ook wat goud heeft kunnen pakken')
+                            print(exit)
+                    else:
+                        print('jullie gaan morgen in de ochtend maar terwijl jullie slapen brak johns vriedin in jullie kamer en stal de kaart en de cordinaten van de schat')
+                        print(exit)
+                else:
+                    print('je kunt de aanwijzing niet vinden en geeft het op pech gehad')
+                    print(exit)
+            else:
+                print('het plan is niet gelukt en johns vriendin heeft de kruis')
+                print(exit)
+        else:
+            print('je wilt het plan niet horen dat wordt lastig maar je maakt je eigen plan')
+    else:
+        print('zonder informatie kun je geen plan bedenken idioot')
+        print(exit)
+else:
+    print('je zult de schat nooit vinden zonder john')
+    print(exit)
