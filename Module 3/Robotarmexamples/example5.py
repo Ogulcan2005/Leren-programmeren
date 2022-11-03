@@ -1,22 +1,21 @@
 from shutil import move
 from RobotArm import RobotArm
 
-robotArm = RobotArm('exercise 6')
+robotArm = RobotArm('exercise 5')
 
 # Jouw python instructies zet je vanaf hier:
 robotArm.speed = 1
+for x in range(7):
+    robotArm.moveRight()
+for x in range(7):
+    robotArm.grab()
+    robotArm.moveRight()
+    robotArm.drop()
+    robotArm.moveLeft()
+    robotArm.moveLeft()
+robotArm.grab()
 robotArm.moveRight()
-
-for x in range(3):
-    robotArm.grab()
-    robotArm.moveLeft()
-    robotArm.drop()
-    robotArm.moveRight()
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-    robotArm.moveLeft()
-
+robotArm.drop()
     
 
 
