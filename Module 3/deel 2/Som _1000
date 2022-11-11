@@ -1,0 +1,5 @@
+getal = 50
+
+while getal < 1002:
+    print(getal)
+    getal += 1
