@@ -1,5 +1,6 @@
 import random
 rondes = 1
+hoeveel = 10
 for x in range(20):
     for x in range(10):
         print(f'ronde: {rondes}')
@@ -9,8 +10,10 @@ for x in range(20):
         kansen = 0
         while kansen < 10:
             print('raad wat het getal is in 10 kansen')
+            print(f'je hebt nog {hoeveel} kansen deze ronde')
             raden = input()
             raden = int(raden)
+            hoeveel -= 1
             kansen = kansen + 1
             som = cijfer - raden
 
