@@ -7,10 +7,10 @@ robotArm.randomLevel(1,7)
 robotArm.grab()
 x = 1
 while robotArm.scan() != "":
-    for blokken in range(a):
+    for blokken in range(x):
         robotArm.moveRight()
     robotArm.drop()    
-    for stappel in range(a):
+    for stappel in range(x):
         robotArm.moveLeft()
     robotArm.grab()
     x = x + 1

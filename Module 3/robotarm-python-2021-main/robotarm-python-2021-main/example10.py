@@ -1,4 +1,3 @@
-from shutil import move
 from RobotArm import RobotArm
 robotArm = RobotArm('exercise 10')
 tiles = 9
@@ -9,4 +8,5 @@ while tiles > 0:
     robotArm.drop()
     for x in range(tiles):
         robotArm.moveLeft()
-        tiles = tiles - 1
+    tiles = tiles - 2
+    robotArm.moveRight()

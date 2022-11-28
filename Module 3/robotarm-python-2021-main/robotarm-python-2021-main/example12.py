@@ -1,17 +1,16 @@
 from RobotArm import RobotArm
 robotArm = RobotArm('exercise 12')
-for i in range(0,8):
-    robotArm.moveRight()
-for i in range(1,9):
+for i in range(9,0,-1):
     robotArm.grab()
     scan = robotArm.scan()
-    if scan == "red":
-        for c in range(0,i):
-            robotArm.moveRight()
+    if scan != "red":
         robotArm.drop() 
-        for c in range(0,i):
-            robotArm.moveLeft()  
+        robotArm.moveRight()
     else:
+        for c in range(i):
+            robotArm.moveRight()
         robotArm.drop()
-    robotArm.moveLeft()
+        for c in range(i-1):
+            robotArm.moveLeft()
 robotArm.wait()
+
