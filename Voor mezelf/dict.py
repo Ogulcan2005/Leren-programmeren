@@ -23,7 +23,8 @@ while True:
         else:
             break
 
-    naam_lijst[naam] = leeftijd or naam_lijst.update({naam : leeftijd})
+    naam_lijst[naam] = leeftijd 
+    #naam_lijst.update({naam : leeftijd})
 print(naam_lijst)
 leeftijd_list = list(naam_lijst.values())
 print(leeftijd)
