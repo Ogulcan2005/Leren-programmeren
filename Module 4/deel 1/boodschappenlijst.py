@@ -9,6 +9,6 @@ while extra_invoegen == "ja":
         boodschappenlijst[product] += aantal
     extra_invoegen = input("Wil je nog een product toevoegen ja/nee: ")
 print("----[BOODSCHAPPENLIJST]----")
-for k , v in bag.items():
+for k , v in boodschappenlijst.items():
     print(f"{v}x {k}")
 print("---------------------------")

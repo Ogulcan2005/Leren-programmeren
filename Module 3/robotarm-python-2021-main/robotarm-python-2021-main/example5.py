@@ -7,11 +7,11 @@ robotArm = RobotArm('exercise 5')
 robotArm.speed = 2
 for x in range(7):
     robotArm.moveRight()
-for x in range(8):
+for y in range(8):
     robotArm.grab()
     robotArm.moveRight()
     robotArm.drop()
-    if x < 7:    
+    if y < 7:    
         robotArm.moveLeft()
         robotArm.moveLeft()
 
