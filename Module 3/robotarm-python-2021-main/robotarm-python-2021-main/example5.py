@@ -11,9 +11,9 @@ for y in range(8):
     robotArm.grab()
     robotArm.moveRight()
     robotArm.drop()
-    if y < 7:    
-        robotArm.moveLeft()
-        robotArm.moveLeft()
+    # if y < 7:    
+    #     robotArm.moveLeft()
+    #     robotArm.moveLeft()
 
     
 

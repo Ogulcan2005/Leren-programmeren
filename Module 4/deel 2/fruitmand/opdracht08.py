@@ -10,6 +10,6 @@ fruitmand.append(watermeloen)
 
 volledig_gewicht = 0
 for x in fruitmand:
-    weight = volledig_gewicht + x['weight']
-print(f'{weight}g')
+    volledig_gewicht = volledig_gewicht + x['weight']
+print(f' totaal gewicht van de fruitmand is: {volledig_gewicht}')
     
