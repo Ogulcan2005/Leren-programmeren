@@ -1,0 +1,8 @@
+ul.rood {
+    text-align:left;
+    border-style: dashed; width: 300px; height: 200px; border: 20px; margin: 40px; padding: 40px;
+    border-color: red;
+    background-color: burlywood;
+
+    border-color: red;
+}
