@@ -1,13 +1,12 @@
-def fibonacci(n):
-    if n <= 1:
-        return n
+def fibonacci(lijst: list, max: int) -> list:
+    if lijst[-2] >= max:
+        return lijst
     else:
-        return(fibonacci(n-1) + fibonacci(n-2))
+        lijst.append(lijst[-2] + lijst[-1])    
+        return fibonacci(lijst, max)
 
-n = int(input("hoevaak wilt u het"))
+print(fibonacci([0, 1], 100))
 
-for i in range(n):
-    print(fibonacci(i))
 
 # def fibonacci2(fibo_list: list, max: int) -> int:
 #     return fibo_list
