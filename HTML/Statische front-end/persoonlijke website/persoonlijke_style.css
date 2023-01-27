@@ -1,0 +1,18 @@
+h1 {
+    color:gold;
+}
+h2{
+    color: yellowgreen;
+}
+h3{
+    color: aqua;
+}
+body{
+    background-color:aliceblue;
+}
+div.main{
+    background-color: aqua;
+}
+a:hover{
+    background-color: blue;
+}

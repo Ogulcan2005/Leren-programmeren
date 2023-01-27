@@ -1,11 +1,16 @@
 def fibonacci(lijst: list, max: int) -> list:
-    if lijst[-2] >= max:
-        return lijst
+    if len(lijst) >= max:
+        print(lijst)
+        gulde = lijst[-1] / lijst[-2]
+        return gulde
     else:
-        lijst.append(lijst[-2] + lijst[-1])    
+        lijst.append(lijst[-2] + lijst[-1])
         return fibonacci(lijst, max)
+    
 
-print(fibonacci([0, 1], 100))
+
+hoevaak = int(input('hoevaak wil u dat hij elkaar optelt'))
+print(fibonacci([0, 1], hoevaak))
 
 
 # def fibonacci2(fibo_list: list, max: int) -> int:
