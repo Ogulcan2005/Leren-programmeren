@@ -1,4 +1,4 @@
-from random import randint, random,shuffle
+from random import shuffle
 kleur = ['harten', 'klaveren', 'schoppen', 'ruiten']
 kaarten = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'boer', 'vrouw', 'heer', 'aas']
 deck = []
