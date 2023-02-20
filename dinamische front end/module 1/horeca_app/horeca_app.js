@@ -1,49 +1,35 @@
-let uitkomst = ""
-let pogging = 7
-const drank = ["fris","bier","wijn"]
+let uitkomst = "";
+const drank = ["fris","bier","wijn"];
+let bon = [];
 
-let fris_prijs = 1.62
-let bier_prijs = 2.62
-let wijn_prijs = 9.99
-
-
-let BTW = 0.21;
-let subtotal = 0;
-let total = 0;
-
-
-// // Calculate taxes and total
-// tax = subtotal * TAX_RATE;
-// total = subtotal + tax;
-
-
-while (pogging > 0) {
-    let vraag = prompt("Wat wilt uw bestellen?: ");
-    if (!drank.includes(vraag)) {
-        console.log("Dit kan ik niet.");
-        pogging --;
-    } 
-    else {
-        console.log("uw bestelling is: " + vraag)
-        c = false;
-        break;
-    }
-    let vraag_2 = parseInt(prompt("Hoeveel"+ vraag +"drankjes wilt u hebben"))
-    if (vraag_2 > 0) {
+let fris = 6.99;
+let bier= 4.99;
+let wijn= 7.99;
+let gekozen_drank = ''
+while(gekozen_drank != 'stop'){
+    gekozen_drank = prompt('wat wilt u bestellen');
+    if (drank.includes(gekozen_drank)){
+        if (gekozen_drank == 'bier'){
+            console.log('1 bier is '+ '' + bier + '' + ' euro');
+            let vraag_hoeveel = parseInt(prompt('hoeveel ' + gekozen_drank + ' wilt u'));
+            let bon_vraag = ('aantal ' + vraag_hoeveel + gekozen_drank + ' is' + (vraag_hoeveel * bier));
+            bon.push(bon_vraag);
+            console.log(bon_vraag)
+        } else if (gekozen_drank == 'fris'){
+            console.log('1 fris is '+ '' + fris + '' + ' euro');
+            vraag_hoeveel = parseInt(prompt('hoeveel ' + gekozen_drank + ' wilt u'));
+            bon_vraag = ('aantal ' + vraag_hoeveel + gekozen_drank + ' is ' + (vraag_hoeveel * fris));
+            bon.push(bon_vraag);
+            console.log(bon_vraag)
+        } else if (gekozen_drank == 'wijn'){
+            console.log('1 wijn is '+ '' + wijn + '' + ' euro');
+            vraag_hoeveel = parseInt(prompt('hoeveel ' + gekozen_drank + ' wilt u'));
+            bon_vraag = ('aantal ' + vraag_hoeveel + gekozen_drank + ' is ' + (vraag_hoeveel * wijn));
+            bon.push(bon_vraag);
+            console.log(bon_vraag)}
     
-        document.getElementById("bonnetje").innerHTML = bonnetje;
+    } else {
+        console.log('kies wijn, bier of fris');
+    }}
+    console.log(bon);
 
-        sum = 
-        console.log(sum)
-    }
-
-
-
-}
-if (pogging == 0){
-    console.log("uw hebt te vaak ongeldige keuze ingevoerd!")
-}
-
-
-
-document.getElementById("uitkomst").innerHTML = uitkomst;
