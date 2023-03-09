@@ -7,11 +7,11 @@ for (let x = 1; x <= hoeveel;x++){
     }
     mijn_zin += "<br>";
 }
-for (let x = hoeveel -1; x >= 1;x--){
-    for (let y = 1; y <= x;y++){
-        mijn_zin += y + "";
-    }
-    mijn_zin += "<br>";
-}
+// for (let x = hoeveel -1; x >= 1;x--){
+//     for (let y = 1; y <= x;y++){
+//         mijn_zin += y + "";
+//     }
+//     mijn_zin += "<br>";
+// }
 
 document.getElementById("mijn_zin").innerHTML = mijn_zin;

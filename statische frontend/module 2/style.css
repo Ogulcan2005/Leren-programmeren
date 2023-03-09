@@ -11,3 +11,6 @@ body{
     color: darkgoldenrod;
 }
 div.first p:first-of-type { color: red; font-style: italic, bold; letter-spacing: 5px; }
+div.first p{
+    padding: 20px;
+}
