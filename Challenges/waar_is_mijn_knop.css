@@ -1,0 +1,10 @@
+button{
+    background-color: blue;
+    color: white;
+    height: 100px; width: 100px;
+    font-family: 'Top Secret Stamp';
+}
+button:hover{
+    background-color: red;
+    text-decoration: underline;
+}

@@ -5,7 +5,7 @@ print('nu bied hij jou hulp aan om de kaart te stelen en de schat te vinden.')
 print("")
 hulp_bieden = input('accepteer jij zijn hulp ja/nee?')
 if hulp_bieden == 'ja':
-    print('je accepteert johns hulp en hij')
+    print('je accepteert johns hulp')
     informatie = input('wil je informatie krijgen over de kaart ja/nee?')
     if informatie == 'ja':
         print("")
@@ -66,6 +66,7 @@ if hulp_bieden == 'ja':
         else:
             print('je wilt het plan niet horen dat wordt lastig maar je maakt je eigen plan')
             print('je maakt een plan B en dat is door te improviseren en het')
+            exit
     else:
         print('zonder informatie kun je geen plan bedenken idioot')
         exit()
