@@ -1,0 +1,4 @@
+31-3-2023
+
+module 5 deel 2 treasure hunt af maken en voor de inspiratie week oython afmaken
+presentatie geven aan de klas over ruby 
