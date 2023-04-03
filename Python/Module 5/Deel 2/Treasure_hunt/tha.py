@@ -1,5 +1,5 @@
 from functions import *
-from data import mainCharacter, JOURNEY_IN_DAYS, friends, adventurerGear, treasure, investors
+from data import *
 
 totalCost = 0
 chapterNr = 1
