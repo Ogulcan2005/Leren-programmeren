@@ -108,13 +108,28 @@ def getCashInGoldFromPeople(people:list) -> float:
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    pass
+    lijst = []
+    for x in list:
+        if investors['profitReturn'] <= 10:
+            lijst.append(x)
+    return lijst 
+
 
 def getAdventuringInvestors(investors:list) -> list:
-    pass
-
+    lijst = []
+    for x in investors:
+        if x['adventuring'] and x['profitReturn'] <= 10:
+            lijst.append(x)
+    return lijst
+    
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    pass
+    totaal = 0
+    aantal_investors = getAdventuringInvestors(investors)
+    for x in range(len(aantal_investors)):
+        totaal += getItemsValueInGold(gear)
+    totaal += getJourneyFoodCostsInGold(len(aantal_investors),len(aantal_investors))
+    totaal += getTotalRentalCost(len(aantal_investors), len(aantal_investors))
+    return totaal
 
 ##################### M04.D02.O10 #####################
 
