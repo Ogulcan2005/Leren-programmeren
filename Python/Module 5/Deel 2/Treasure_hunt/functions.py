@@ -134,7 +134,10 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 ##################### M04.D02.O10 #####################
 
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+    paard = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
+    mens = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
+    totaal = int(leftoverGold / (mens + paard))
+    return totaal
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
     pass
