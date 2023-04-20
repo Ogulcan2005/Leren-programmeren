@@ -61,8 +61,8 @@ def getNumberOfTentsNeeded(people:int) -> int:
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
     paard_koste_per_dag = horses * silver2gold(COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS
-    tent_koste_per_week = tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS / 7 )
-    totale_koste_in_goud = paard_koste_per_dag + tent_koste_per_week
+    tent_koste_per_week = tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS / 7)
+    totale_koste_in_goud = (paard_koste_per_dag + tent_koste_per_week)
     return totale_koste_in_goud
 
 ##################### M04.D02.O7 #####################
@@ -109,8 +109,8 @@ def getCashInGoldFromPeople(people:list) -> float:
 
 def getInterestingInvestors(investors:list) -> list:
     lijst = []
-    for x in list:
-        if investors['profitReturn'] <= 10:
+    for x in investors:
+        if x['profitReturn'] <= 10:
             lijst.append(x)
     return lijst 
 
@@ -127,8 +127,8 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
     aantal_investors = getAdventuringInvestors(investors)
     for x in range(len(aantal_investors)):
         totaal += getItemsValueInGold(gear)
-    totaal += getJourneyFoodCostsInGold(len(aantal_investors),len(aantal_investors))
     totaal += getTotalRentalCost(len(aantal_investors), len(aantal_investors))
+    totaal += getJourneyFoodCostsInGold(len(aantal_investors),len(aantal_investors))
     return totaal
 
 ##################### M04.D02.O10 #####################
@@ -136,11 +136,13 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
     paard = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
     mens = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
-    totaal = int(leftoverGold / (mens + paard))
+    totaal = int(leftoverGold/(paard + mens))
     return totaal
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+    paard_koste = horses * copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * nightsInInn
+    mens_koste = people * silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * nightsInInn
+    return round(paard_koste + mens_koste,2)
 
 ##################### M04.D02.O12 #####################
 
@@ -149,6 +151,8 @@ def getInvestorsCuts(profitGold:float, investors:list) -> list:
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
     pass
+
+
 
 ##################### M04.D02.O13 #####################
 
