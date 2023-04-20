@@ -32,13 +32,37 @@ def getFileContentAsString(textFile: str) -> str:
 
 # opdracht 1
 def getNumberOfCharacters(text: str) -> int:
-    text.replace('_-', '')
-    aantal = 0
-    return len(text) + aantal
+    count = 0
+    for x in text:
+        if x.isalpha():
+            count += 1
+    return count
 # opdracht 2
 def getNumberOfSentences(text: str) -> int:
-    return text.count('.')
+    teller = 0
+    for x in text:
+        if x in '.?!':
+            teller += 1
+    return teller
 # opdracht 3
 def getNumberOfWords(text: str) -> int:
     x = text.split()
     return len(x)
+# opdracht 5
+def aviScore(text: str) -> int:
+    score = 0
+    gemiddelde = getNumberOfWords(text) / getNumberOfSentences(text)
+    if gemiddelde <= 7.4:
+        score = 5
+    elif gemiddelde > 7.4 and gemiddelde <= 8.4:
+        score = 6
+    elif gemiddelde > 8.4 and gemiddelde <= 9.4:
+        score = 7
+    elif gemiddelde > 9.4 and gemiddelde <= 10.4:
+        score = 8
+    elif gemiddelde > 10.4 and gemiddelde <= 11.4:
+        score = 11
+    elif gemiddelde > 11:
+        score = 12
+    return score
+
