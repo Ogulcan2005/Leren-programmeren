@@ -34,7 +34,7 @@ def getFileContentAsString(textFile: str) -> str:
 def getNumberOfCharacters(text: str) -> int:
     count = 0
     for x in text:
-        if x.isalpha():
+        if x in ALLOWED_IN_WORD:
             count += 1
     return count
 # opdracht 2
