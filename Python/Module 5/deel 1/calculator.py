@@ -14,6 +14,10 @@ def division(nb3: float, nb4: float) -> float:
     antwoord4 = nb3 / nb4
     return antwoord4
 
+def square(n1: float, n2: float) -> float:
+    antwoord = n1 * n2
+    return antwoord
+
 n1 = float(input('welk getal wil je mee beginen'))
 
 while n1 > True:
@@ -51,6 +55,9 @@ while n1 > True:
         n2 = 2
         print(division(n1, n2))
         n1 = division(n1, n2)
+    elif choice == 'q':
+        print(square(n1, n1))
+        n1 = square(n1, n1)
     elif choice == 'i':
         break
 
