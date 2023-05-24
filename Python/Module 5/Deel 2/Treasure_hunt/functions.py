@@ -175,8 +175,8 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
 
     # verdeel de uitkomsten
     for person in people:
-        cash_dict = person['cash']
-        start = getPersonCashInGold(cash_dict)
+        person_cash = person['cash']
+        start = getPersonCashInGold(person_cash)
         
         if person == mainCharacter:
             end = start + hoeveel_goud+(donatie*len(adventuringfriends))
