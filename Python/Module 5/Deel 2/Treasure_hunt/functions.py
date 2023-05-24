@@ -71,9 +71,8 @@ def getItemsAsText(items:list) -> str:
     zin = ""
     for x in items:
         if zin != "":
-            zin += f", {x['amount']}{x['unit']} {x['name']}"
-        else:
-            zin += f"{x['amount']}{x['unit']} {x['name']}"
+            zin += ", "
+        zin += f"{x['amount']}{x['unit']} {x['name']}"
     return zin
 
 
@@ -91,7 +90,7 @@ def getItemsValueInGold(items:list) -> float:
     return round(prijs_in_goud,2)
 
 ##################### M04.D02.O8 #####################
-
+# to do: use getItemsValueInGold
 def getCashInGoldFromPeople(people:list) -> float:
     totaalGoud = 0
     for goud in people:
@@ -103,22 +102,23 @@ def getCashInGoldFromPeople(people:list) -> float:
             totaalGoud += silver2gold(goud['cash']['silver'])
         if goud['cash']['copper'] > 0:
             totaalGoud += copper2gold(goud['cash']['copper'])
-    return round(totaalGoud,2)
+    return float(round(totaalGoud,2))
 
 ##################### M04.D02.O9 #####################
-
+def checkprofit(profit: int) -> bool:
+    return profit <= 10
 def getInterestingInvestors(investors:list) -> list:
     lijst = []
     for x in investors:
-        if x['profitReturn'] <= 10:
+        if checkprofit(x['profitReturn']):
             lijst.append(x)
     return lijst 
 
-
+# to do use getInterestingInvestors
 def getAdventuringInvestors(investors:list) -> list:
     lijst = []
     for x in investors:
-        if x['adventuring'] and x['profitReturn'] <= 10:
+        if x['adventuring'] and checkprofit(x['profitReturn']):
             lijst.append(x)
     return lijst
     
@@ -147,11 +147,10 @@ def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
 ##################### M04.D02.O12 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    cut_lijst = []
-    for investors in getInterestingInvestors(investors):
-        investor = round(investors['profitReturn'] / 100 * profitGold,2)
-        cut_lijst.append(investor)
-    return cut_lijst
+    lijst = []
+    for investor in getInterestingInvestors(investors):
+            lijst.append(round(investor['profitReturn'] / 100 * profitGold,2) )
+    return lijst
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
     totaal = round((profitGold - sum(investorsCuts)) / fellowship,2)
@@ -162,8 +161,56 @@ def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> fl
 ##################### M04.D02.O13 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
+    people = [mainCharacter] + friends + investors
+    earnings = []
+    donatie = 10
 
+    # haal de juiste inhoud op
+    adventuringfriends = getAdventuringFriends(friends)
+    interestinginvestors = getInterestingInvestors(investors)
+    adventuringinvestors = getAdventuringInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold,investors)
+    hoeveel_goud =  getAdventurerCut(profitGold, investorsCuts, len(adventuringfriends)+1  + len(adventuringinvestors))
+    
+
+    # verdeel de uitkomsten
+    for person in people:
+        cash_dict = person['cash']
+        start = getPersonCashInGold(cash_dict)
+        
+        if person == mainCharacter:
+            end = start + hoeveel_goud+(donatie*len(adventuringfriends))
+        elif person in adventuringfriends:
+            end = round((start + hoeveel_goud) - donatie,2)
+        else:
+            end = start
+            
+        if "profitReturn" in person:
+            if person in interestinginvestors and person in adventuringinvestors:
+                    end = (profitGold/100)
+                    profit = end * person["profitReturn"]
+                    end = profit + start + hoeveel_goud
+            elif person in interestinginvestors:
+                    end = (profitGold/100)
+                    profit = end * person["profitReturn"]
+                    end = profit + start
+                    
+                
+
+        earnings.append({
+            'name'   : person['name'],
+            'start'  : start,
+            'end'    : end
+        })
+        
+                                                                                                                                                                                                
+    return earnings
+
+
+
+        
+
+   
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
     vars = map(lambda string, color=color: colored(str(string), color, attrs=['bold']) ,vars)
