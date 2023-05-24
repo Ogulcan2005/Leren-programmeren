@@ -195,22 +195,14 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
                     profit = end * person["profitReturn"]
                     end = profit + start
                     
-                
-
         earnings.append({
             'name'   : person['name'],
             'start'  : start,
             'end'    : end
         })
-        
-                                                                                                                                                                                                
+                                                                                                                                                                                                  
     return earnings
 
-
-
-        
-
-   
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
     vars = map(lambda string, color=color: colored(str(string), color, attrs=['bold']) ,vars)
