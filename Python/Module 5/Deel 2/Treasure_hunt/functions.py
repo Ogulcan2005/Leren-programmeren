@@ -38,7 +38,7 @@ def getFromListByKeyIs(list:list, key:str, value:any) -> list:
     lijst = []
     for x in list:
         if key in x:
-           if x[key] == value:
+            if x[key] == value:
                lijst.append(x)
     return lijst 
 
@@ -49,7 +49,17 @@ def getShareWithFriends(friends:list) -> int:
     return getFromListByKeyIs(friends, 'shareWith', True)
 
 def getAdventuringFriends(friends:list) -> list:
-    return getFromListByKeyIs(friends, 'adventuring', True)
+    return getShareWithFriends(getAdventuringPeople(friends))
+
+    # lijst = []
+    # adventure = getAdventuringPeople(friends)
+    # share = getShareWithFriends(friends)
+    # if adventure == True:
+    #     lijst.append(adventure)
+    # elif adventure == True and share == True:
+    #     lijst.append(share)
+    # return lijst
+
 
 ##################### M04.D02.O6 #####################
 
@@ -90,7 +100,7 @@ def getItemsValueInGold(items:list) -> float:
     return round(prijs_in_goud,2)
 
 ##################### M04.D02.O8 #####################
-# to do: use getItemsValueInGold
+
 def getCashInGoldFromPeople(people:list) -> float:
     totaalGoud = 0
     for goud in people:
@@ -136,7 +146,7 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
     paard = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
     mens = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
-    totaal = int(leftoverGold/(paard + mens))
+    totaal = math.floor(leftoverGold/(paard + mens))
     return totaal
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
@@ -185,20 +195,17 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
         else:
             end = start
             
-        if "profitReturn" in person:
-            if person in interestinginvestors and person in adventuringinvestors:
-                    end = (profitGold/100)
-                    profit = end * person["profitReturn"]
-                    end = profit + start + hoeveel_goud
-            elif person in interestinginvestors:
-                    end = (profitGold/100)
-                    profit = end * person["profitReturn"]
+            if person in interestinginvestors:
+                    profit = (profitGold/100) * person["profitReturn"]
                     end = profit + start
+                    if person in adventuringinvestors:
+                        end += hoeveel_goud
+                    
                     
         earnings.append({
             'name'   : person['name'],
-            'start'  : start,
-            'end'    : end
+            'start'  : round(start,2),
+            'end'    : round(end,2)
         })
                                                                                                                                                                                                   
     return earnings
