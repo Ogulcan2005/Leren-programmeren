@@ -1,4 +1,4 @@
-const images = [
+var images = [
     "audi.png",
     "auto.png",
     "bmw.png",
@@ -11,25 +11,40 @@ const images = [
     "zentorno.png"
 ];
 
-function shuffle(array){
-    let currentindex = array.length,   randomindex;
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
 
-    while(currentindex != 0 ){
-        randomindex = Math.floor(Math.random() * currentindex);
-        currentindex--;
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
 
-        [array[currentindex]], [array[randomindex]] = [array[randomindex]], [array[currentindex]];
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
     }
+
     return array;
 }
 
+var shuffleImage = shuffle(images);
 const div_bord = document.getElementById("spelbord");
 
-for(let i = 0; i < images.length; i++){
-    let img = document.createElement('img')
-    img.src = images[i]
+
+for (let i = 0; i < images.length; i++) {
+    let img = document.createElement('img');
+    img.src = images[i];
     div_bord.appendChild(img);
 }
+for (let i = 0; i < shuffleImage.length; i++) {
+    let img = document.createElement('img');
+    img.src = shuffleImage[i];
+    img.src = 
+    div_bord.appendChild(img);
+}
+
 
 
 
