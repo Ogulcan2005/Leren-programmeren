@@ -23,15 +23,13 @@ function shuffle(array){
     return array;
 }
 
-
-const shuffledImages = shuffle(images);
 const div_bord = document.getElementById("spelbord");
 
-shuffledImages.forEach((src) => {
-    const image = document.createElement("img");
-    image.src = src;
-    div_bord.appendChild(image);
-});
+for(let i = 0; i < images.length; i++){
+    let img = document.createElement('img')
+    img.src = images[i]
+    div_bord.appendChild(img);
+}
 
 
 
