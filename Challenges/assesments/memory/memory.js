@@ -32,17 +32,31 @@ function shuffle(array) {
 var shuffleImage = shuffle(images);
 const div_bord = document.getElementById("spelbord");
 
+function click(e){
+    console.log(this.afbeelding)
+    this.src = this.afbeelding;
+    let poging1 = img;
+    let poging2 = img;
+    if(poging1 != poging2){
+        this.src = 'kaart_achterkant.png';
+    }
+}
 
 for (let i = 0; i < images.length; i++) {
     let img = document.createElement('img');
-    img.src = images[i];
+    img.src = 'kaart_achterkant.png';
+    img.afbeelding = images[i];
     div_bord.appendChild(img);
+    img.onclick = click
+
+
 }
 for (let i = 0; i < shuffleImage.length; i++) {
     let img = document.createElement('img');
-    img.src = shuffleImage[i];
-    img.src = 
+    img.src = 'kaart_achterkant.png';
+    img.afbeelding = shuffleImage[i];
     div_bord.appendChild(img);
+    img.onclick = click
 }
 
 
