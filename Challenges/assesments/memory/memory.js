@@ -32,13 +32,26 @@ function shuffle(array) {
 var shuffleImage = shuffle(images);
 const div_bord = document.getElementById("spelbord");
 
+function apply_bg_image(){
+    foto[0].src = 'kaart_achterkant.png';
+    foto[1].src = 'kaart_achterkant.png';
+    foto = [];
+}
+
+let foto = []
+
 function click(e){
-    console.log(this.afbeelding)
-    this.src = this.afbeelding;
-    let poging1 = img;
-    let poging2 = img;
-    if(poging1 != poging2){
-        this.src = 'kaart_achterkant.png';
+    this.src = this.afbeelding;    
+    foto.push(this.afbeelding)
+    console.log(foto)
+
+    if(foto.length == 2){
+        if(foto[0].afbeelding === foto[1].afbeelding){
+            alert('je hebt 2 afbeeldingen geklikt')
+            foto = [];
+        }else{
+            setTimeout(apply_bg_image, 300)
+        }
     }
 }
 
