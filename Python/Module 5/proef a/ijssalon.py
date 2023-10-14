@@ -1,14 +1,12 @@
-from functie import *
+from functie import aantal_bolletjes, bakje_hoorn
 
-print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.\n")
+print("Welkom bij Papi Gelato, je mag alle smaken kiezen zolang het maar vanille ijs is.\n")
 opnieuw = "ja"
 while opnieuw == "ja":
-    aantal_bolletjes()
-    bakje_hoorn(aantal_bolletjes)
-    if opnieuw == "nee":
+    bollen = aantal_bolletjes()
+    bakje_hoorn(bollen)
+    opnieuw = input("Wilt u nog meer bestellen? (ja/nee): ")
+    if opnieuw != "ja":
         print("Bedankt en tot ziens")
-        break
-    else:
-        print('Sorry, dat snapik niet...')
-        opnieuw = input("Wilt u nog meer bestellen ")
+
 
