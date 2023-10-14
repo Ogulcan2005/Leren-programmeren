@@ -6,7 +6,12 @@ while opnieuw == "ja":
     bollen = aantal_bolletjes()
     bakje_hoorn(bollen)
     opnieuw = input("Wilt u nog meer bestellen? (ja/nee): ")
-    if opnieuw != "ja":
+    if opnieuw == "nee":
         print("Bedankt en tot ziens")
+        break
+    else:
+        print("sorry dat snap ik niet.")
+        opnieuw = "ja"
+        
 
 
