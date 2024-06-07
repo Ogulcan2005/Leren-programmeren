@@ -1,6 +1,19 @@
 def aantal_bolletjes() -> int:
     return int(input("Hoeveel bolletjes wilt u? "))
 
+def soort_smaken(aantal):
+    smaken = {'A': 'Aardbei', 'C': 'Chocolade', 'M': 'Munt', 'V': 'Vanille'}
+    gekozen_smaken = []
+    for x in range(aantal):
+        x+=1
+        welke_smaak = input(f"Welke smaak wilt u voor bolletje nummer {x}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+        gekozen_smaken.append(welke_smaak)
+        if welke_smaak not in smaken:
+            print("Sorry, dat snap ik niet...")
+            welke_smaak = input(f"Welke smaak wilt u voor bolletje nummer {x}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+            gekozen_smaken.append(welke_smaak)
+    return gekozen_smaken
+
 def bakje_hoorn(bollen) -> str:
     if bollen < 4:
         bakjeofhoorn = input(f"Wilt u deze {bollen} bolletje(s) in een hoorntje of een bakje? ")
@@ -29,6 +42,7 @@ def bestelling():
     while opnieuw == "ja":
         aantal_bollen = aantal_bolletjes()
         bakjeofhoorn = bakje_hoorn(aantal_bollen)
+        smaken = soort_smaken(aantal_bollen)
         totaal_bollen += aantal_bollen
         if bakjeofhoorn == "bakje":
             totaal_bakje += 1
@@ -39,6 +53,7 @@ def bestelling():
     if opnieuw == "nee":
         print("Uw bestelling:")
         print("----[Papi Gelato]----")
+        print(smaken)
         print(f"bolletjes {totaal_bollen} x {Bolletjes}: {totaal_bollen * Bolletjes:.2f}")
         print(f"bakjes {totaal_bakje} x {Bakjes}:  {totaal_bakje * Bakjes}")
         print(f"hoorntjes {totaal_hoorn} x {Horrentjes}:  {totaal_hoorn * Horrentjes}")
@@ -47,3 +62,4 @@ def bestelling():
         print("Bedankt en tot ziens")
 
 
+bestelling()

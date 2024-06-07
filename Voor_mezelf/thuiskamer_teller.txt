@@ -1,0 +1,29 @@
+formulier:
+
+een handmatige teller programmeren, waar er met 2 buttons wordt gezord dat als er op andere accounts wordt ingelogd dat er met zijn account het bij houdt of ze op ontbijt en huiskamer klikken
+en dat we het gaan style zodat hij past op websote van het davinci college tot en of voor februari met Javascript, HTML, CSS en PHP
+
+verdeling:
+
+op dit moment werken we samen aan alle delen als een groep
+
+
+verwachte eind datum:
+
+voor februari
+
+
+research sorces:
+
+W3schools 
+Stackoverflow
+Laravel
+
+vandaag een omgeving maken. server op Ogulcan zijn laptop..
+dinsdag eerste les: opzet van de schermen.
+1. database
+2. om de (twee weken tot een maand) aan meneer de jong presenteren hoe het gaat
+3. web omgeving aanvragen aan (meneer. Stefano).
+4. hoeveel mensen per dag
+5. 
+
